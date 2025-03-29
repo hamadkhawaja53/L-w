@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Message</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+            flex-direction: column;
+            text-align: center;
+        }
+        .message-box {
+            display: none;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Yahan Click Karein</h2>
+    <button class="button" onclick="nextStep()">Click</button>
+
+    <div class="message-box" id="messageBox">
+        <h2>Surprise!</h2>
+        <p>Meri zindagi ka sabse khoobsurat hissa sirf tum ho! ❤️</p>
+    </div>
+
+    <script>
+        let steps = ["Ooper karein", "Neeche karein", "Left karein", "Right karein"];
+        let stepIndex = 0;
+        function nextStep() {
+            if (stepIndex < steps.length) {
+                document.querySelector("h2").innerText = steps[stepIndex];
+                stepIndex++;
+            } else {
+                document.querySelector("h2").style.display = "none";
+                document.querySelector(".button").style.display = "none";
+                document.getElementById("messageBox").style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
